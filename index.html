@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Administração de imóveis para aluguel por temporada no Rio de Janeiro. A 42Homes cuida de tudo para você lucrar com tranquilidade.">
+  <meta name="keywords" content="aluguel por temporada, administração de imóveis, 42Homes, Rio de Janeiro, renda extra, Airbnb, gestão de imóveis">
+  <meta name="author" content="42Homes">
+  <title>42Homes – Real Estate Administration</title>
+  
+  <!-- Favicon correto -->
+  <link rel="icon" href="https://raw.githubusercontent.com/42homesbr/home/27d77a74dbad036029f05fe91113d893efc174bb/img/logo-42homes.png.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+      --terracota: #944E45;
+      --white: #ffffff;
+      --gold: #CBA135;
+      --text: #333333;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: url('img/pao_de_acucar.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--terracota);
+      text-align: center;
+      padding: 1rem;
+    }
+
+    header img {
+      max-width: 220px;
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+    }
+
+    .terracota {
+      background-color: var(--terracota);
+      color: var(--white);
+    }
+
+    .white {
+      background-color: lightgrey;
+      color: var(--text);
+      backdrop-filter: blur(2px);
+    }
+
+    .hero {
+      background-color: var(--white);
+      color: var(--black);
+      text-align: center;
+      padding: 6rem 1.5rem;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      color: var(--gold);
+    }
+
+    .benefits, .included, .faq {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .benefit, .included div, .faq div {
+      max-width: 280px;
+      text-align: center;
+    }
+
+    .cta-button, form button {
+      display: inline-block;
+      background-color: var(--gold);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .cta-button:hover, form button:hover {
+      background-color: #b88e2f;
+      transform: scale(1.03);
+    }
+
+    .whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  padding: 16px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float img {
+  width: 48px;  /* Aumentado em 20px */
+  height: 48px;
+}
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    form input, form textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    footer {
+      background-color: var(--terracota);
+      color: var(--white);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .comparison-table {
+      max-width: 900px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 100%;
+      background-color: transparent;
+      color: var(--white);
+    }
+
+    .comparison-table th,
+.comparison-table td {
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+    .comparison-table thead tr {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+ .bg-incluso {
+  background-image: url('https://raw.githubusercontent.com/42homesbr/home/main/img/Top_Down_View_of_Copacabana_Mosaic_and_Palm_Trees_3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: #e0e0e0; /* texto levemente escurecido */
+  overflow: hidden;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* sombra sutil para contraste */
+}
+
+.bg-incluso::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.bg-incluso > * {
+  position: relative;
+  z-index: 2;
+}
+.gold-title {
+  color: var(--gold);
+}
+
+  </style>
+</head>
+
+
+<body>
+ <header style="
+  position: relative;
+  background-image: url('https://raw.githubusercontent.com/42homesbr/home/main/img/sunrise-in-rio-de-janeiro%20-%20Copia.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+">
+  <!-- Camada bem leve -->
+  <div style="
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  "></div>
+
+  <img src="https://raw.githubusercontent.com/42homesbr/home/main/img/logo-42homes.png.png"
+     alt="Logotipo da 42Homes"
+     style="
+       position: absolute;
+       top: 60px;
+       left: 30px;
+       width: 170px;
+       height: 160px;
+       object-fit: cover;
+       border-radius: 50%;
+       border: 1px solid white;
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+       z-index: 999;
+     ">
+
+
+</header>
+
+  <section class="white">
+  <h2 class="gold-title">Sobre a 42Homes</h2>
+  <p style="max-width: 800px; margin: auto; text-align: center;">
+    A 42Homes transforma imóveis em fontes de alta rentabilidade com zero dor de cabeça para você. Gerimos todo o processo: da divulgação e precificação à limpeza e suporte aos hóspedes. Você recebe mais, com tranquilidade e total transparência.
+  </p>
+</section>
+
+  <section class="terracota">
+    <h2>Por que escolher a 42Homes?</h2>
+    <table class="comparison-table" aria-label="Tabela comparativa dos benefícios da 42Homes">
+      <thead>
+        <tr>
+          <th>Benefícios</th>
+          <th>Com 42Homes</th>
+          <th>Sem 42Homes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Máxima rentabilidade</td><td>✔️</td><td>❌</td></tr>
+        <tr><td>Redução de vacância</td><td>✔️</td><td>❌</td></tr>
+        <tr><td>Precificação inteligente</td><td>✔️</td><td>❌</td></tr>
+        <tr><td>Anúncios de alta performance</td><td>✔️</td><td>❌</td></tr>
+        <tr><td>Fotos profissionais</td><td>✔️</td><td>❌</td></tr>
+        <tr><td>Gestão completa da operação</td><td>✔️</td><td>❌</td></tr>
+        <tr><td>Atendimento 24/7 para hóspedes</td><td>✔️</td><td>❌</td></tr>
+        <tr><td>Suporte ao proprietário</td><td>✔️</td><td>❌</td></tr>
+        <tr><td>Distribuição em todos os canais</td><td>✔️</td><td>❌</td></tr>
+        <tr><td>Estadias curtas e longas</td><td>✔️</td><td>❌</td></tr>
+        <tr><td>Alta avaliação nas plataformas</td><td>✔️</td><td>❌</td></tr>
+        <tr><td>Limpeza profissional certificada</td><td>✔️</td><td>❌</td></tr>
+        <tr><td>Manutenção preventiva</td><td>✔️</td><td>❌</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="white">
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq">
+      <div>
+        <h3>Quanto custa?</h3>
+        <p>Trabalhamos com comissão de 20% sobre as reservas pagas. Sem mensalidade, sem taxa fixa. Você só paga quando ganha.</p>
+      </div>
+      <div>
+        <h3>Preciso estar no Rio?</h3>
+        <p>Não precisa! Fazemos toda a gestão remotamente. Você acompanha tudo pelo celular, de onde estiver.</p>
+      </div>
+      <div>
+        <h3>Como recebo meus ganhos?</h3>
+        <p>Mensalmente, direto na sua conta bancária, com relatórios detalhados de todas as reservas.</p>
+      </div>
+      <div>
+        <h3>O que o imóvel precisa ter?</h3>
+        <p>Ele precisa ser mobiliado, estar em boas condições, ter cozinha equipada, banheiro funcional e Wi-Fi. Nós cuidamos do resto!</p>
+      </div>
+      <div>
+        <h3>Preciso falar com os hóspedes?</h3>
+        <p>Não. Nossa equipe cuida de todo atendimento — antes, durante e depois da estadia. Você não precisa se preocupar com nada.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-incluso">
+  <h2>O que está incluso</h2>
+  <div class="included">
+    <div>
+      <h3>Gestão de reservas</h3>
+      <p>Presença nos principais canais e atendimento 24h aos hóspedes, do check-in ao check-out.</p>
+    </div>
+    <div>
+      <h3>Limpeza profissional</h3>
+      <p>Equipe treinada para garantir conforto e segurança a cada nova estadia.</p>
+    </div>
+    <div>
+      <h3>Obra de Manutenção</h3>
+      <p>Suporte técnico de manutenção com fornecedores de confiança e rápida resolução de problemas.</p>
+    </div>
+  </div>
+</section>
+
+ <section class="white">
+  <h2>Como cadastrar seu imóvel</h2>
+  <div style="max-width: 1000px; margin: auto; display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: center;">
+    
+    <!-- Imagem -->
+    <div style="flex: 1; min-width: 300px; text-align: center;">
+      <img src="https://bhomy.com/wp-content/uploads/2021/05/bhomy-ilustracao.png" 
+           alt="Ilustração de cadastro de imóvel" 
+           style="max-width: 100%; height: auto; border-radius: 12px;">
+    </div>
+
+    <!-- Passos -->
+    <div style="flex: 1; min-width: 280px;" class="included">
+      <div>
+        <h3>1. Envie seu contato</h3>
+        <p>Nosso time de especialistas vai falar com você rapidamente.</p>
+      </div>
+      <div>
+        <h3>2. Prepare seu imóvel</h3>
+        <p>Fazemos o inventário, fotos profissionais e ajustes para alcançar o padrão ideal.</p>
+      </div>
+      <div>
+        <h3>3. Comece a lucrar</h3>
+        <p>O anúncio vai ao ar e sua propriedade começa a render. Simples assim.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <section class="terracota" id="contato">
+    <h2>Entre em contato</h2>
+    <form action="https://formsubmit.co/42homesbr@gmail.com" method="POST">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <textarea name="mensagem" placeholder="Sua mensagem" rows="5" required></textarea>
+       <div style="text-align: center; margin-top: 2rem;">
+      <a href="#contato" class="cta-button">Cadastrar meu imóvel</a>
+    </div>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="Nova mensagem do site 42Homes">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://42homes.com.br/obrigado.html">
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 42Homes – Todos os direitos reservados.</p>
+  </footer>
+
+  <a href="https://wa.me/5521959064778" class="whatsapp-float" target="_blank" aria-label="Abrir conversa no WhatsApp com a 42Homes">
+  <img src="https://img.icons8.com/ios-filled/100/ffffff/whatsapp.png" alt="Ícone do WhatsApp">
+</a>
+</body>
+</html>
