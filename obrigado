@@ -1,45 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Mensagem enviada!</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mensagem enviada com sucesso – 42Homes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --terracota: #944E45;
+      --gold: #CBA135;
+      --white: #ffffff;
+    }
+
     body {
+      margin: 0;
+      padding: 0;
       font-family: 'Open Sans', sans-serif;
-      background-color: #944E45;
-      color: white;
+      background-color: var(--terracota);
+      color: var(--white);
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
+      min-height: 100vh;
       text-align: center;
     }
-    .box {
-      max-width: 600px;
-      padding: 2rem;
-    }
+
     h1 {
-      font-size: 2rem;
-      color: #CBA135;
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
     }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
     a {
-      color: #fff;
-      background-color: #CBA135;
-      padding: 0.7rem 1.5rem;
-      border-radius: 8px;
-      text-decoration: none;
       display: inline-block;
       margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--gold);
+      color: var(--white);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #b88e2f;
+      transform: scale(1.03);
     }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>Obrigado pelo contato!</h1>
-    <p>Recebemos sua mensagem e entraremos em contato em breve.</p>
-    <a href="https://42homes.com.br">Voltar ao site</a>
-  </div>
-</body>
-</html>
+  <h1>Mensagem enviada com sucesso!</h1>
+  <p>Recebemos seus dados e entraremos em contato o mais rápido possível.
